@@ -1,0 +1,54 @@
+
+.about-background {
+    background-color: black;
+    height: calc(100vh - 64px); /* Adjust height to account for header height */
+    width: 100vw; /* Full width of the viewport */
+    display: flex; /* Use flexbox to center the content */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center horizontally */
+    margin: 0; /* Ensure there's no margin */
+    padding: 0; /* Ensure there's no padding */
+}
+
+body {
+    margin: 0; /* Remove default margin */
+}
+
+.about-content {
+    display: flex; /* Flex container for text and images */
+    width: 100%; /* Full width */
+}
+
+.about-text {
+    flex: 1; /* Take up remaining space */
+    padding-right: 2rem; /* Space between text and images */
+}
+
+.about-image {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        text-align: center; /* Center text */
+    }
+
+    .about-text p {
+        font-size: 1.5rem; /* Change this value to increase or decrease the size */
+        color: yellow-500; /* Ensure color is correct */
+        margin-right: 2rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    
+
+    .about-image {
+        width: 100%; /* Full width on small screens */
+        max-width: 300px; /* Ensure it doesn't go beyond 300px */
+    }
+}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
+
 
 const Bookings: React.FC = () => {
   // State for form data
@@ -27,7 +26,7 @@ const Bookings: React.FC = () => {
 
   return (
     <div>
-      <NavBar />
+     
       <div className="container mx-auto p-8">
         <h1 className="text-2xl font-bold mb-4">Bookings</h1>
         <p className="mb-6">Book your photobooth experience with us.</p>
@@ -79,7 +78,7 @@ const Bookings: React.FC = () => {
           </button>
         </form>
       </div>
-      <Footer />
+     
     </div>
   );
 };

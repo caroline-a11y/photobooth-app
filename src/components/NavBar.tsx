@@ -9,7 +9,7 @@ const NavBar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-lg font-bold">
           <img src="/images/logo.png" alt="Photobooth Logo" className="inline-block w-10 h-10 mr-2" />
-          Photobooth App
+          Malckie Photobooth
         </div>
         <ul className="flex space-x-4">
           <li><Link href="/" className="text-white hover:text-gray-400">Home</Link></li>

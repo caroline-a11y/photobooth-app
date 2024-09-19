@@ -1,17 +1,16 @@
-// pages/_app.tsx
-import '../styles/globals.css'; // Import your global CSS file
-import NavBar from '@/components/NavBar'; // Adjust path if needed
-import Footer from '@/components/Footer'; // Adjust path if needed
+/// pages/_app.tsx
+import '../styles/globals.css'; // Include Tailwind CSS styles
+import type { AppProps } from 'next/app';
+import Layout from '../components/Layout'; // Adjust the path if necessary
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <NavBar /> {/* Include the navigation bar */}
-      <Component {...pageProps} /> {/* Render the page component */}
-      <Footer /> {/* Include the footer */}
-    </>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 
 export default MyApp;
+
 

@@ -1,0 +1,28 @@
+/* layout.css */
+
+/* Remove all margins and paddings from the body and html */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%; /* Ensure the body takes the full height of the viewport */
+}
+
+header, main, footer {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header, main, and footer should take the full width */
+header, footer {
+    width: 100%;
+}
+
+/* Make sure the footer stays at the bottom */
+footer {
+    background-color: #1F2937; /* Dark gray */
+    color: white;
+    padding: 16px;
+    text-align: center;
+    margin-top: auto;
+}
