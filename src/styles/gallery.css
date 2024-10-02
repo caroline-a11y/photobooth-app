@@ -1,0 +1,62 @@
+/* Gallery Page Styles */
+.gallery-container {
+    padding: 2rem;
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff; /* White text */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gallery-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #facc15; /* Yellow heading */
+    text-align: center;
+  }
+  
+  .gallery-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    justify-items: center;
+    width: 100%;
+  }
+  
+  .gallery-image {
+    width: 100%;
+    max-width: 300px; /* Maximum width for images */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .gallery-title {
+      font-size: 2rem;
+    }
+  
+    .gallery-description {
+      font-size: 1rem;
+    }
+  
+    .gallery-image {
+      max-width: 250px; /* Adjust image size for smaller screens */
+    }
+  }
+  

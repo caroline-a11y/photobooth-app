@@ -1,0 +1,32 @@
+/* bookings.css */
+.bookings-background {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .bookings-form {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .bookings-form label {
+    font-weight: bold;
+    color: #FFD700;
+  }
+  
+  .bookings-form input {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+  }
+  
+  .bookings-form button {
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+  }
+  

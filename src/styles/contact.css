@@ -1,0 +1,85 @@
+/* Contact Page Styles */
+.contact-background {
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff; /* White text */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .contact-container {
+    background-color: #333; /* Dark gray form container */
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #facc15; /* Yellow heading */
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #facc15; /* Yellow labels */
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: 2px solid #facc15; /* Yellow outline on focus */
+  }
+  
+  .contact-form textarea {
+    resize: vertical; /* Allow vertical resize only */
+  }
+  
+  .contact-button {
+    background-color: #facc15; /* Yellow button */
+    color: #000;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #eab308; /* Darker yellow on hover */
+  }
+  
+  .contact-details {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #facc15;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width
+  
