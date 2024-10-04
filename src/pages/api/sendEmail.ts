@@ -1,43 +1,49 @@
 // pages/api/sendEmail.ts
 
+// src/pages/api/sendEmail.ts
+
+
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
 export default async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { name, date, time, email } = req.body;
+    const { name, email, message } = req.body;
 
-    // Create a transporter with your email provider's settings
+    // Set up the transporter for Nodemailer
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // You can use other services like Outlook, etc.
+      host: 'smtp.gmail.com', // Replace with your SMTP server
+      port: 587, // Use 465 for SSL
+      secure: false, // Set to true for port 465
       auth: {
-        user: 'malckieboothke@gmail.com', // Use environment variables for security
-        pass: 'Owns1mplebooth!',  // Use environment variables for security
+        user: 'malckieboothke@gmail.com', // Replace with your email
+        pass: 'Owns1mplebooth!', // Replace with your email password
+      },
+      tls: {
+        rejectUnauthorized: false, // Allow self-signed certificates
       },
     });
+    
+    const mailOptions = {
+      from: email,
+      to: 'recipient@example.com', // Replace with the recipient's email
+      subject: `New message from ${name}`,
+      text: message,
+    };
 
     try {
-      // Sending the email
-      await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: 'malckieboothke@gmail.com', // The email where bookings should be sent
-        subject: 'New Photobooth Booking',
-        text: `New booking details:\n\nName: ${name}\nDate: ${date}\nTime: ${time}\nEmail: ${email}`,
-        html: `<p>New booking details:</p>
-               <ul>
-                 <li><strong>Name:</strong> ${name}</li>
-                 <li><strong>Date:</strong> ${date}</li>
-                 <li><strong>Time:</strong> ${time}</li>
-                 <li><strong>Email:</strong> ${email}</li>
-               </ul>`,
-      });
-
-      res.status(200).json({ message: 'Email sent successfully' });
-    } catch (error) {
+      await transporter.sendMail(mailOptions);
+      res.status(200).json({ status: 'Email sent!' });
+    } catch (error: unknown) {
       console.error('Error sending email:', error);
-      res.status(500).json({ message: 'Failed to send email', error: error.message });
+      if (error instanceof Error) {
+        res.status(500).json({ status: 'Error sending email', message: error.message });
+      } else {
+        res.status(500).json({ status: 'Error sending email' });
+      }
     }
   } else {
-    res.status(405).json({ message: 'Method not allowed' });
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }

@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <header className="bg-yellow-600">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src="/images/logo.png" alt=" Logo" className="h-12 w-12 object-contain" />
+            <img src="/images/logo.jpg" alt=" Logo" className="h-12 w-12 object-contain" />
             <h1 className="text-xl font-bold text-white">Malckie Photobooth</h1>
           </div>
           {/* Navigation Links */}

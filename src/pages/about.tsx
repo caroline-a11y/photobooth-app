@@ -19,6 +19,14 @@ const About: React.FC = () => {
           <p className="text-yellow-500 mt-7 text-xl">
             Let’s get ready to book or take some good photos with Malckie and create good memories. Just click the button below. Enjoy!
           </p>
+          <div className="about-images flex justify-between mt-4"> {/* Use flex to arrange images in a row */}
+            <img src="/images/wedding.png" alt="Wedding Event" className="w-24 h-24 object-cover" />
+            <img src="/images/party.jpeg" alt="Party Event" className="w-24 h-24 object-cover" />
+            <img src="/images/event.jpeg" alt="Event Photo Booth" className="w-24 h-24 object-cover" />
+            <img src="/images/cinema.png" alt="Cinema Photo Booth" className="w-24 h-24 object-cover" />
+          </div>
+
+          
           {/* Booking Button */}
           <Link href="/bookings">
             <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400 transition">
@@ -29,12 +37,12 @@ const About: React.FC = () => {
         
         {/* Images Container */}
         <div className="about-images flex flex-col space-y-4"> {/* Stack images vertically */}
-          <img src="/images/photo 6.jpg" alt="About Malckie Photobooth" className="about-image" />
-          <img src="/images/photo one.jpg" alt="About Malckie Photobooth" className="about-image" />
+        <img src="/images/photo one.jpg" alt="About Malckie Photobooth" className="about-image" />
+        <img src="/images/photo two.jpg" alt="About Malckie Photobooth" className="about-image" />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default About;

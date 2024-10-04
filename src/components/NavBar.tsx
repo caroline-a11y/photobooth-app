@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../images/logo.png'; // Update the path to your logo if necessary
+import logo from '../images/logo.jpg'; // Update the path to your logo if necessary
 
 const NavBar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-lg font-bold">
-          <img src="/images/logo.png" alt="Photobooth Logo" className="inline-block w-10 h-10 mr-2" />
+          <img src="/images/logo.jpg" alt="Photobooth Logo" className="inline-block w-10 h-10 mr-2" />
           Malckie Photobooth
         </div>
         <ul className="flex space-x-4">
