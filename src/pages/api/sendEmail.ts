@@ -17,7 +17,7 @@ export default async function sendEmail(req: NextApiRequest, res: NextApiRespons
       secure: false, // Set to true for port 465
       auth: {
         user: 'malckieboothke@gmail.com', // Replace with your email
-        pass: 'Owns1mplebooth!', // Replace with your email password
+        pass: 'hxfszyrkjcegmyyc', // Replace with your email password
       },
       tls: {
         rejectUnauthorized: false, // Allow self-signed certificates
@@ -26,7 +26,7 @@ export default async function sendEmail(req: NextApiRequest, res: NextApiRespons
     
     const mailOptions = {
       from: email,
-      to: 'recipient@example.com', // Replace with the recipient's email
+      to: 'malckieboothke@gmail.com', // Replace with the recipient's email
       subject: `New message from ${name}`,
       text: message,
     };
