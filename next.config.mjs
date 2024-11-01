@@ -1,11 +1,14 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   
     reactStrictMode: true,
-    images:{
+    images: {
         unoptimized: true,
     },
-  };
-  
-  export default nextConfig;
-  
+};
+
+export default nextConfig;
+

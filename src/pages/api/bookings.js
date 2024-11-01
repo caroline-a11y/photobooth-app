@@ -10,7 +10,13 @@ export default async function handler(req, res) {
     if (!name || !email || !date || !time) {
       return res.status(400).json({ message: 'All fields are required.' });
     }
-
+   
+    const verificationToken = await p.verificationToken.delete({
+      where: {
+        token: "your_verification_token_here",
+      },
+    });
+    
     // Setup Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'Gmail',

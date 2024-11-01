@@ -1,13 +1,16 @@
-import type { Config } from 'tailwindcss';
+// Change this line:
+// import type { Config } from 'tailwindcss';
+
+// To this:
 
 /** @type {import('tailwindcss').Config} */
-const config: Config = {
+const config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './src/**/*.{js,ts,jsx,tsx}', // Ensure you include your components and pages
-    './styles/**/*.css', // Ensure this line is correct for your styles
+    './src/**/*.{js,ts,jsx,tsx}',
+    './styles/**/*.css',
   ],
   theme: {
     extend: {
@@ -21,3 +24,4 @@ const config: Config = {
 };
 
 export default config;
+                                                            

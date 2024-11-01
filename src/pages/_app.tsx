@@ -1,4 +1,4 @@
-/// pages/_app.tsx
+// pages/_app.tsx
 import '../styles/globals.css'; // Include Tailwind CSS styles
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 }
 
 export default MyApp;
+
+
 
 
 

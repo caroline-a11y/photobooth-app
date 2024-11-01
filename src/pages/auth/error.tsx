@@ -1,32 +1,20 @@
 // src/pages/auth/error.tsx
 import { useRouter } from 'next/router';
 import queryString from 'query-string';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const AuthError = () => {
   const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState('An unknown error occurred. Please try again.');
 
-  // Log the router object to see its structure
   useEffect(() => {
-    console.log("Router object:", router);
-    console.log("Error query param:", router.query.error); // Log the error query param
-  }, [router]);
+    const parsedQuery = queryString.parse(router.asPath.split(/\?/)[1]);
+    const error = parsedQuery.error;
 
-  // Function to parse query parameters
-  const authError = () => {
-    return {
-      query: { ...queryString.parse(router.asPath.split(/\?/)[1]) },
-    };
-  };
-
-  const updatedRouter = authError();
-  const { error } = updatedRouter.query;
-
-  let errorMessage = 'An unknown error occurred. Please try again.';
-
-  if (error) {
-    errorMessage = decodeURIComponent(error as string);
-  }
+    if (error) {
+      setErrorMessage(decodeURIComponent(error as string));
+    }
+  }, [router.asPath]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
