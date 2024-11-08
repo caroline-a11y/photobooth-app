@@ -30,6 +30,6 @@ model Session {
 model VerificationToken {
   id        Int      @id @default(autoincrement())
   identifier String
-  token     String   @unique
+  token     String   @id
   expires   DateTime
 }

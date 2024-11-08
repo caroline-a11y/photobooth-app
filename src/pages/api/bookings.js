@@ -1,5 +1,3 @@
-// src/pages/api/bookings.js
-import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
@@ -10,30 +8,23 @@ export default async function handler(req, res) {
     if (!name || !email || !date || !time) {
       return res.status(400).json({ message: 'All fields are required.' });
     }
-   
-    const verificationToken = await p.verificationToken.delete({
-      where: {
-        token: "your_verification_token_here",
-      },
-    });
-    
+
     // Setup Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
         user: 'malckieboothke@gmail.com', // Your email address
         pass: 'hxfszyrkjcegmyyc', // Your App Password or email password
-    },
-    tls: {
-      rejectUnauthorized: false, // Temporary measure (not recommended for production)
-    },
-  });
-
+      },
+      tls: {
+        rejectUnauthorized: false, // Temporary measure (not recommended for production)
+      },
+    });
 
     // Email options
     const mailOptions = {
-      from: email, // Use the email from the booking request
-      to: 'malckieboothke@gmail.com', // Recipient address (your email)
+      from: 'malckieboothke@gmail.com', // Sender's email from the booking request
+      to: 'malckieboothke@gmail.com', // Your email address (receiver)
       subject: 'New Booking Confirmation',
       text: `You have a new booking!\n\nName: ${name}\nEmail: ${email}\nDate: ${date}\nTime: ${time}`,
     };
@@ -51,4 +42,5 @@ export default async function handler(req, res) {
     return res.setHeader('Allow', ['POST']).status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+
 

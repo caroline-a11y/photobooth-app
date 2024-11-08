@@ -1,75 +1,70 @@
-import React, { useState } from 'react';
-import '../styles/contact.css'; // Import the CSS file
+// src/pages/contact.tsx
 
-const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+import { useState } from 'react';
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+export default function ContactPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form Data Submitted:', formData);
-    alert('Thank you for reaching out!');
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (res.ok) {
+      setStatus('Message sent successfully!');
+      setName('');
+      setEmail('');
+      setMessage('');
+    } else {
+      setStatus('Failed to send message. Please try again later.');
+    }
   };
 
   return (
-    <div className="contact-background">
-      <div className="contact-container">
-        <h1 className="contact-title">Contact Us</h1>
-        <p>Feel free to reach out with your questions or comments using the form below.</p>
-
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-
-          <button type="submit" className="contact-button">Send Message</button>
-        </form>
-      </div>
+    <div className="contact-container" style={{ backgroundColor: 'black', color: '#FFD700', minHeight: '100vh', padding: '2rem' }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '2rem', color: '#FFD700' }}>Contact Us</h1>
+      <form onSubmit={handleSubmit} style={{ maxWidth: '500px', margin: '0 auto', color: '#FFD700' }}>
+        <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            style={{ width: '100%', padding: '0.5rem', margin: '0.5rem 0', backgroundColor: '#333', color: '#FFD700', border: '1px solid #FFD700' }}
+          />
+        </label>
+        <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+          Email:
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{ width: '100%', padding: '0.5rem', margin: '0.5rem 0', backgroundColor: '#333', color: '#FFD700', border: '1px solid #FFD700' }}
+          />
+        </label>
+        <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+          Message:
+          <textarea
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+            style={{ width: '100%', padding: '0.5rem', margin: '0.5rem 0', backgroundColor: '#333', color: '#FFD700', border: '1px solid #FFD700', minHeight: '100px' }}
+          />
+        </label>
+        <button type="submit" style={{ width: '100%', padding: '0.75rem', backgroundColor: '#FFD700', color: 'black', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>
+          Send Message
+        </button>
+      </form>
+      {status && <p style={{ textAlign: 'center', marginTop: '1rem', color: '#FFD700' }}>{status}</p>}
     </div>
   );
-};
-
-export default ContactPage;
+}
