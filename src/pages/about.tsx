@@ -20,10 +20,10 @@ const About: React.FC = () => {
             Let’s get ready to book or take some good photos with Malckie and create good memories. Just click the button below. Enjoy!
           </p>
           <div className="about-images flex justify-between mt-4"> {/* Use flex to arrange images in a row */}
-            <img src="/images/wedding.png" alt="Wedding Event" className="w-24 h-24 object-cover" />
-            <img src="/images/party.jpeg" alt="Party Event" className="w-24 h-24 object-cover" />
-            <img src="/images/event.jpeg" alt="Event Photo Booth" className="w-24 h-24 object-cover" />
-            <img src="/images/cinema.png" alt="Cinema Photo Booth" className="w-24 h-24 object-cover" />
+            <img src="/images/wedding two.jpeg" alt="Wedding Event" className="w-24 h-24 object-cover" />
+            <img src="/images/party two.jpeg" alt="Party Event" className="w-24 h-24 object-cover" />
+            <img src="/images/event two.jpeg" alt="Event Photo Booth" className="w-24 h-24 object-cover" />
+            <img src="/images/cinema two.jpeg" alt="Cinema Photo Booth" className="w-24 h-24 object-cover" />
           </div>
 
           
