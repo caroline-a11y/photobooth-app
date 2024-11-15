@@ -10,7 +10,7 @@ export default async function testMailer(req: NextApiRequest, res: NextApiRespon
       service: 'gmail',
       auth: {
         user: 'malckieboothke@gmail.com', // Your Gmail address
-        pass: 'NationalTheatre2022', // Your Gmail password or app-specific password
+        pass: 'hxfszyrkjcegmyyc', // Your Gmail password or app-specific password
       },
     });
 
