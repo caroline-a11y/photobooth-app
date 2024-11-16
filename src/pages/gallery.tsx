@@ -1,5 +1,3 @@
-import { useSession } from "next-auth/react";
-import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Image from 'next/image';
@@ -12,41 +10,11 @@ const GalleryPage = () => {
             here are some o the photo ideas you can do 
           </p>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 gallery-images">
-        <Image
-          src="/images/photo 5.jpg"
-          alt="Gallery Photo 5"
-          width={500} // Provide appropriate width
-          height={500} // Provide appropriate height
-          className="w-full h-auto object-cover rounded-lg"
-        />
-        <Image
-          src="/images/photo 6.jpg"
-          alt="Gallery Photo 6"
-          width={500}
-          height={500}
-          className="w-full h-auto object-cover rounded-lg"
-        />
-        <Image
-          src="/images/photo 7.jpg"
-          alt="Gallery Photo 7"
-          width={500}
-          height={500}
-          className="w-full h-auto object-cover rounded-lg"
-        />
-        <Image
-          src="/images/photo two.jpg"
-          alt="Gallery Photo Two"
-          width={500}
-          height={500}
-          className="w-full h-auto object-cover rounded-lg"
-        />
-        <Image
-          src="/images/photo 7.jpg"
-          alt="Gallery Photo 7"
-          width={500}
-          height={500}
-          className="w-full h-auto object-cover rounded-lg"
-        />
+        <Image src="/images/photo 5.jpg" alt="Gallery Photo 5" width={500}  height={500} className="w-full h-auto object-cover rounded-lg"/>
+        <Image src="/images/photo 6.jpg" alt="Gallery Photo 6" width={500} height={500} className="w-full h-auto object-cover rounded-lg"/>
+        <Image src="/images/photo 7.jpg" alt="Gallery Photo 7" width={500} height={500} className="w-full h-auto object-cover rounded-lg"/>
+        <Image src="/images/photo two.jpg" alt="Gallery Photo Two" width={500} height={500} className="w-full h-auto object-cover rounded-lg"/>
+        <Image src="/images/photo 7.jpg" alt="Gallery Photo 7" width={500} height={500} className="w-full h-auto object-cover rounded-lg"/>
       </div>
 
       <p className="text-yellow-500 mt-7 text-xl">

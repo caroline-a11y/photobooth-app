@@ -2,7 +2,7 @@
 // pages/index.tsx
 import React from 'react';
 import Header from '../components/Header'; // Corrected path
-import NavBar from '@/components/NavBar'; // Adjust based on your file structure
+// Adjust based on your file structure
 import Footer from '../components/Footer'; // Optional, if you have a footer
 
 const HomePage = () => {
