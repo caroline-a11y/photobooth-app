@@ -1,7 +1,6 @@
-import React from 'react';
-import Footer from './Footer';
-import Link from 'next/link'; // Use Next.js Link for navigation
-import '../styles/globals.css';
+import Image from 'next/image'; // Import the Image component
+import Link from 'next/link'; // Ensure Link is imported for routing
+import Footer from './Footer'; // Assuming Footer is imported from the appropriate path
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +9,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <header className="bg-yellow-600">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src="/images/logo.jpg" alt=" Logo" className="h-12 w-12 object-contain" />
+            {/* Replace <img> with <Image /> */}
+            <Image 
+              src="/images/logo.jpg" // Path to your image
+              alt="Logo" // Alt text for accessibility
+              width={48} // Set width (adjust size as needed)
+              height={48} // Set height (adjust size as needed)
+              className="object-contain" // Ensures the logo is properly contained
+            />
             <h1 className="text-xl font-bold text-white">Malckie Photobooth</h1>
           </div>
           {/* Navigation Links */}
@@ -32,7 +38,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow p-0 bg-gray-100"> {/* Remove padding here */}
+      <main className="flex-grow p-0 bg-gray-100"> {/* Removed padding here */} 
         {children} {/* This renders the content of the pages */}
       </main>
 

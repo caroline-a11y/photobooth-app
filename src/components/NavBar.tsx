@@ -7,8 +7,15 @@ const NavBar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-lg font-bold">
-          <img src="/images/logo.jpg" alt="Photobooth Logo" className="inline-block w-10 h-10 mr-2" />
+        <div className="text-white text-lg font-bold flex items-center">
+          {/* Using Next.js Image component for optimized image */}
+          <Image
+            src={logo} // Using the imported logo
+            alt="Photobooth Logo"
+            width={40} // Set the desired width
+            height={40} // Set the desired height
+            className="mr-2" // Add margin if needed
+          />
           Malckie Photobooth
         </div>
         <ul className="flex space-x-4">
