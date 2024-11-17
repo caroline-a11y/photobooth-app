@@ -45,5 +45,16 @@
   "repository": "https://github.com/caroline-a11y/phtobooth-app",
   "author": "ncaroline",
   "license": "MIT",
-  "description": "A photobooth app for booking sessions and sharing photos."
+  "description": "A photobooth app for booking sessions and sharing photos.",
+  "eslintConfig": {
+    "extends": ["next/core-web-vitals", "next/typescript"],
+    "overrides": [
+      {
+        "files": ["*.d.ts"],
+        "rules": {
+          "@typescript-eslint/no-unused-vars": "off"
+        }
+      }
+    ]
+  }
 }
