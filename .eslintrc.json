@@ -1,3 +1,14 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "eslintConfig": {
+    "extends": ["next/core-web-vitals", "next/typescript"],
+    "overrides": [
+      {
+        "files": ["*.d.ts"],
+        "rules": {
+          "@typescript-eslint/no-unused-vars": "off"
+        }
+      }
+    ]
+  }
 }
+

@@ -9,16 +9,17 @@ const About: React.FC = () => {
       <h1 className="text-yellow-500 text-7xl font-bold"> Get to learn About Us</h1>
       <div className="about-content flex mt-7"> {/* Flex container for text and images */}
         <div className="about-text flex-1 pr-7"> {/* Flex-1 to take up remaining space */}
+        <p className="text-yellow-500 mt-7 text-xl">
+         Malckie booth is more than just a photo booth
+         rental service, we are a team of passionate individuals
+         dedicated to making your special events unforgettable.
+         With a love for capturing the joy and excitement of every
+         occasion, we strive to provide top-notch photo booth experiences
+         that leave a lasting impression.
+         </p>
+
           <p className="text-yellow-500 mt-7 text-xl">
-            Malckie booth is more than just a photo booth
-            rental service; we're a team of passionate individuals
-            dedicated to making your special events unforgettable.
-            With a love for capturing the joy and excitement of every
-            occasion, we strive to provide top-notch photo booth experiences
-            that leave a lasting impression.
-          </p>
-          <p className="text-yellow-500 mt-7 text-xl">
-            Let’s get ready to book or take some good photos with Malckie and create good memories. Just click the button below. Enjoy!
+            Let us get ready to book or take some good photos with Malckie and create good memories. Just click the button below. Enjoy!
           </p>
           <div className="about-images flex justify-between mt-4"> {/* Use flex to arrange images in a row */}
             <Image

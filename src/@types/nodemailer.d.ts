@@ -1,7 +1,14 @@
-// TailwindCSS is a utility CSS framework, and it's not a function.
+
+
+// Declaring the `tailwindcss` module
 declare module 'tailwindcss' {
-  // You can declare types or constants, but Tailwind itself is not typically a function
-  const tailwindcss: any; // If you're not sure about the type, use `any` for now.
+  // Declaring types for Tailwind CSS configuration and plugins
+  const tailwindcss: {
+    config: Record<string, unknown>; // Represents the Tailwind configuration object
+    plugins?: Array<unknown>; // Plugins can be an array, typically
+  };
 
   export default tailwindcss;
 }
+
+
