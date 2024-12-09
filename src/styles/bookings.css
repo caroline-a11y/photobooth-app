@@ -1,7 +1,7 @@
 /* bookings.css */
 .bookings-background {
     background-color: black;
-    color: white;
+    
     min-height: 100vh;
     padding: 2rem;
   }
@@ -20,7 +20,7 @@
   
   .bookings-form input {
     background-color: #333;
-    color: white;
+   
     border: 1px solid #555;
   }
   

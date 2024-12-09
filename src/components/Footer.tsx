@@ -28,7 +28,7 @@ const Footer = () => {
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
             Facebook
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
+          <a href="https://www.instagram.com/malckieboothke/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
             Instagram
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">

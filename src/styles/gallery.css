@@ -2,7 +2,7 @@
 .gallery-container {
     padding: 2rem;
     background-color: #1a1a1a; /* Dark background */
-    color: #fff; /* White text */
+    /* White text */
     min-height: 100vh;
     display: flex;
     flex-direction: column;

@@ -53,5 +53,3 @@ export default NextAuth(authOptions);
 
 
 
-
-//465  import { PrismaClient } from '@prisma/client';

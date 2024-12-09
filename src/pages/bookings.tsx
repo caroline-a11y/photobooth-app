@@ -5,7 +5,6 @@ import BookingForm from '../components/BookingForm';
 const BookingsPage = () => {
   return (
     <div>
-      <h1>Book a Session</h1>
       <BookingForm />
     </div>
   );
